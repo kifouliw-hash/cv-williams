@@ -14,14 +14,14 @@
 
   <div class="container">
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>📌 À propos de moi</h2>
       <p>Professionnel dynamique et polyvalent, spécialisé en gestion de projet, digital et automatisation.
       Actuellement en Mastère Manager de Business Unit, je développe mes compétences en stratégie,
       innovation et outils numériques pour contribuer à la transformation des entreprises et inspirer ma génération.</p>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>🎓 Formation</h2>
       <ul>
         <li><strong>2024 - 2026 :</strong> Mastère Manager de Business Unit – IFAG Angers</li>
@@ -30,7 +30,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>💼 Expériences professionnelles</h2>
       <ul>
         <li><strong>2025 – Présent | Chargé de projet numérique – Etablissement SOGAL</strong>
@@ -73,7 +73,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>💡 Compétences</h2>
       <ul>
         <li>Gestion de projet et performance (Gantt, Notion, KPI, reporting)</li>
@@ -84,7 +84,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>🧰 Soft Skills</h2>
       <ul>
         <li>Esprit analytique et proactif</li>
@@ -94,7 +94,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>🌍 Langues</h2>
       <ul>
         <li>Français : Langue maternelle</li>
@@ -102,7 +102,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>🎯 Hobbies</h2>
       <ul>
         <li>Lecture</li>
@@ -112,7 +112,7 @@
       </ul>
     </div>
 
-    <div class="section card reveal">
+    <div class="section card">
       <h2>📞 Contact</h2>
       <p>Tél : <a href="tel:+33752760408">+33 7 52 76 04 08</a></p>
       <p>Email : <a href="mailto:kifouliw@gmail.com">kifouliw@gmail.com</a></p>
@@ -125,24 +125,19 @@
     © 2025 Williams Kifouli – Tous droits réservés
   </footer>
 
-  <!-- Script pour les animations au scroll -->
   <script>
-    window.addEventListener("scroll", reveal);
-
-    function reveal() {
-      let elements = document.querySelectorAll(".card");
-      for (let i = 0; i < elements.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = elements[i].getBoundingClientRect().top;
-        let elementVisible = 100;
-
-        if (elementTop < windowHeight - elementVisible) {
-          elements[i].classList.add("active");
-        } else {
-          elements[i].classList.remove("active");
-        }
-      }
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, i) => {
+        card.style.opacity = 0;
+        card.style.transform = "translateY(30px)";
+        setTimeout(() => {
+          card.style.transition = "all 0.8s ease";
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        }, i * 200);
+      });
+    });
   </script>
 </body>
 </html>
