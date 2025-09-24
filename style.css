@@ -1,0 +1,132 @@
+/* ---- Style global ---- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+a {
+  color: #e67e22;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff9f43;
+}
+
+/* ---- Header ---- */
+header {
+  background: linear-gradient(135deg, #1a2a40, #273c75);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 42px;
+  animation: slideDown 1s ease;
+}
+
+header p {
+  font-size: 20px;
+  margin-top: 10px;
+  animation: fadeIn 2s ease;
+}
+
+/* Animation décorative dans le header */
+header::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+/* ---- Conteneur ---- */
+.container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeUp 1s ease;
+}
+
+/* ---- Sections ---- */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #1a2a40;
+  border-left: 5px solid #e67e22;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  animation: slideRight 0.8s ease;
+}
+
+/* ---- Cartes ---- */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Footer ---- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a2a40;
+  color: white;
+  margin-top: 40px;
+  font-size: 14px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
