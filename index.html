@@ -112,7 +112,7 @@
       </ul>
     </div>
 
-    <div class="section card">
+       <div class="section card">
       <h2>📞 Contact</h2>
       <p>Tél : <a href="tel:+33752760408">+33 7 52 76 04 08</a></p>
       <p>Email : <a href="mailto:kifouliw@gmail.com">kifouliw@gmail.com</a></p>
@@ -127,17 +127,19 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".card");
-      cards.forEach((card, i) => {
-        card.style.opacity = 0;
-        card.style.transform = "translateY(30px)";
+      const cartes = document.querySelectorAll(".card");
+      cartes.forEach((carte, i) => {
+        carte.style.opacity = 0;
+        carte.style.transform = "translateY(30px)";
         setTimeout(() => {
-          card.style.transition = "all 0.8s ease";
-          card.style.opacity = 1;
-          card.style.transform = "translateY(0)";
+          carte.style.transition = "all 0.8s ease";
+          carte.style.opacity = 1;
+          carte.style.transform = "translateY(0)";
         }, i * 200);
       });
     });
   </script>
 </body>
 </html>
+
+
