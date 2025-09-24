@@ -10,21 +10,16 @@ header {
   color: white;
   padding: 40px;
   text-align: center;
-  animation: fadeDown 1.2s ease;
 }
+
 header h1 {
   margin: 0;
   font-size: 32px;
 }
+
 header p {
   font-size: 18px;
   margin-top: 5px;
-}
-
-/* Animation fade-down du header */
-@keyframes fadeDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
 }
 
 .container {
@@ -43,11 +38,6 @@ header p {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   margin-bottom: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 h2 {
@@ -67,28 +57,7 @@ footer {
   margin-top: 40px;
 }
 
-/* Liens */
 a {
   color: #e67e22;
   text-decoration: none;
-  transition: color 0.3s;
-}
-a:hover {
-  color: #d35400;
-}
-
-/* Effet machine à écrire */
-.typewriter {
-  display: inline-block;
-  border-right: 3px solid #e67e22;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 4s steps(40, end), blink 0.7s infinite;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  50% { border-color: transparent }
 }
