@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>👋 Williams Kifouli</h1>
-    <p class="typewriter">Manager de Business Unit | Chargé de projet numérique | Entrepreneur digital</p>
+    <p>Manager de Business Unit | Chargé de projet numérique | Entrepreneur digital</p>
   </header>
 
   <div class="container">
@@ -131,13 +131,26 @@
       const cartes = document.querySelectorAll(".card");
       cartes.forEach((carte, i) => {
         carte.style.opacity = 0;
-        carte.style.transform = "translateY(50px)";
+        carte.style.transform = "translateY(30px)";
         setTimeout(() => {
           carte.style.transition = "all 0.8s ease";
           carte.style.opacity = 1;
           carte.style.transform = "translateY(0)";
-        }, i * 300);
+        }, i * 200);
       });
+
+      // Texte animé sans curseur
+      const titre = document.querySelector("header p");
+      const texte = titre.textContent;
+      titre.textContent = "";
+      let i = 0;
+      const interval = setInterval(() => {
+        titre.textContent += texte[i];
+        i++;
+        if (i === texte.length) {
+          clearInterval(interval);
+        }
+      }, 50);
     });
   </script>
 </body>
