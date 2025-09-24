@@ -1,132 +1,129 @@
-/* ---- Style global ---- */
+/* === Style global === */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background-color: #f4f6f9;
   color: #2c3e50;
   line-height: 1.6;
-  animation: fadeIn 1s ease-in-out;
 }
 
-h1, h2, h3 {
-  font-weight: 700;
-}
-
-a {
-  color: #e67e22;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ff9f43;
-}
-
-/* ---- Header ---- */
+/* === Header avec animation === */
 header {
-  background: linear-gradient(135deg, #1a2a40, #273c75);
+  background-color: #1a2a40;
   color: white;
-  padding: 60px 20px;
+  padding: 60px;
   text-align: center;
-  position: relative;
   overflow: hidden;
 }
 
 header h1 {
   margin: 0;
-  font-size: 42px;
-  animation: slideDown 1s ease;
+  font-size: 40px;
+  white-space: nowrap;
+  border-right: 3px solid #e67e22;
+  width: 0;
+  overflow: hidden;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
 }
 
 header p {
   font-size: 20px;
-  margin-top: 10px;
-  animation: fadeIn 2s ease;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 3.2s;
 }
 
-/* Animation décorative dans le header */
-header::after {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
-}
-
-/* ---- Conteneur ---- */
+/* === Conteneur principal === */
 .container {
   padding: 30px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
-  animation: fadeUp 1s ease;
 }
 
-/* ---- Sections ---- */
+/* === Sections et cartes === */
 .section {
   margin-bottom: 40px;
 }
 
-.section h2 {
-  color: #1a2a40;
-  border-left: 5px solid #e67e22;
-  padding-left: 10px;
-  margin-bottom: 20px;
-  animation: slideRight 0.8s ease;
-}
-
-/* ---- Cartes ---- */
 .card {
   background: white;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeIn 1s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
+/* Effet hover sur les cartes */
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ---- Footer ---- */
+/* === Titres === */
+h2 {
+  color: #e67e22;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #e67e22;
+  bottom: -5px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* === Liens === */
+a {
+  color: #e67e22;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1a2a40;
+}
+
+/* === Footer === */
 footer {
   text-align: center;
   padding: 20px;
   background: #1a2a40;
   color: white;
   margin-top: 40px;
-  font-size: 14px;
-  animation: fadeIn 1.5s ease;
 }
 
-/* ---- Animations ---- */
+/* === Animations === */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* === Animation lors du scroll === */
+.reveal {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 
-@keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideRight {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
